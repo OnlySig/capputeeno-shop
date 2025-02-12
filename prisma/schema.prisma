@@ -13,6 +13,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+  image String @db.Text
+  carrinho Carrinho?
+}
+
 model Produto {
   id Int @id @default(autoincrement())
   titulo String @unique
@@ -22,4 +31,24 @@ model Produto {
   categoria String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  carrinhoItems CarrinhoItem[]
+}
+
+model Carrinho {
+  id Int @id @default(autoincrement())
+  userId Int @unique
+  user User @relation(fields: [userId], references: [id])
+  items CarrinhoItem[]
+}
+
+model CarrinhoItem {
+  id Int @id @default(autoincrement())
+  carrinhoId Int
+  produtoId Int
+  quantidade Int @default(1)
+
+  carrinho Carrinho @relation(fields: [carrinhoId], references: [id], onDelete: Cascade)
+  produto Produto @relation(fields: [produtoId], references: [id])
+
+  @@unique([carrinhoId, produtoId])
 }

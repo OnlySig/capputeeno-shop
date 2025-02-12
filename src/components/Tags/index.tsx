@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const Tags = () => {
   const page = usePathname();
   return (
-    <ul className="flex items-center gap-9 pt-8">
+    <ul className="flex items-center gap-9 pt-8 mb-16">
       <li>
         <Link
           href={"/"}

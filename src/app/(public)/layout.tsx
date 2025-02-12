@@ -7,7 +7,7 @@ const LayoutCatalogo = ({ children }: { children: ReactNode }) => {
     <>
       <Navbar />
       <section className="bg-[#F0F0F5] h-screen">
-        <div className="max-w-[1120px] mx-auto">
+        <div className="max-w-[1100px] px-5 mx-auto">
           <Tags />
           {children}
         </div>

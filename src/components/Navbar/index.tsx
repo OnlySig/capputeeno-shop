@@ -9,7 +9,7 @@ const sairaStencilOne = Saira_Stencil_One({
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center max-w-[1120px] mx-auto h-20">
+    <nav className="flex justify-between items-center max-w-[1100px] px-5 mx-auto h-20">
       <h1
         className={`font-saira-stencil-one text-4xl text-[#5D5D6D] ${sairaStencilOne.className}`}
       >

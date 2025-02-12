@@ -7,7 +7,7 @@ CREATE TABLE "Produto" (
     "imagem" TEXT NOT NULL,
     "categoria" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Produto_pkey" PRIMARY KEY ("id")
 );
